@@ -1,4 +1,5 @@
 using Toybox.Application.Properties;
+using Toybox.Lang;
 using Toybox.WatchUi;
 
 module GMTSettings {
@@ -6,13 +7,8 @@ module GMTSettings {
     const BEZEL_COUNT = 5;
 
     function getNumber(key, def) {
-        var v = null;
-        try {
-            v = Properties.getValue(key);
-        } catch (e) {
-            v = null;
-        }
-        if (v instanceof Number) {
+        var v = Properties.getValue(key);
+        if (v instanceof Lang.Number) {
             return v;
         }
         return def;
