@@ -1,0 +1,4 @@
+<drawables>
+    <bitmap id="DialTop" filename="dial_top.png" dithering="none"/>
+    <bitmap id="DialBottom" filename="dial_bottom.png" dithering="none"/>
+</drawables>

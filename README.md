@@ -1,6 +1,6 @@
 # GMT 24H – urskive for Garmin fenix 7
 
-Analog GMT-urskive inspirert av klassiske 24-timers pilot-/reiseklokker: tofarget 24t-bezel, «Mercedes»-timeviser, GMT-viser med pil, lume-prikker og datovindu kl. 3.
+Privat hommage til Rolex GMT-Master II (ikke tilknyttet Rolex; kun til personlig bruk – ikke for Connect IQ Store). Urskiven har tofarget 24t-bezel, «Mercedes»-timeviser, GMT-viser med pil, lume-prikker og datovindu kl. 3.
 
 ![Preview](preview.png)
 
@@ -16,5 +16,7 @@ Hold **UP** på urskiven › *Urskive* › *Tilpass*:
 - **GMT +1 / −1 time**: tidssone for GMT-viseren (standard UTC)
 
 ## Bygg selv
+Logo/skrift på skiven genereres av `tools/brand_assets.py` (en bitmap per skjermstørrelse i `resources-round-*`).
+
 GitHub Actions (`.github/workflows/build.yml`) bygger automatisk ved hver push og legger `.prg` i `dist/`.
 Lokalt: VS Code + Monkey C-utvidelsen, eller `./build.sh developer_key.der` med Connect IQ SDK installert.

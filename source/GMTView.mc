@@ -14,12 +14,13 @@ class GMTView extends WatchUi.WatchFace {
     const C_WHITE  = 0xFFFFFF;
     const C_SILVER = 0xAAAAAA;
     const C_STEEL  = 0x555555;
-    const C_GREEN  = 0x00AA55;
 
     var _awake = true;
     var _cx = 130.0;
     var _cy = 130.0;
     var _r  = 130.0;
+    var _dialTop = null;
+    var _dialBottom = null;
 
     function initialize() {
         WatchFace.initialize();
@@ -31,6 +32,8 @@ class GMTView extends WatchUi.WatchFace {
         _cx = w / 2.0;
         _cy = h / 2.0;
         _r = (w < h ? w : h) / 2.0;
+        _dialTop = WatchUi.loadResource(Rez.Drawables.DialTop);
+        _dialBottom = WatchUi.loadResource(Rez.Drawables.DialBottom);
     }
 
     function onExitSleep() {
@@ -216,15 +219,13 @@ class GMTView extends WatchUi.WatchFace {
             }
         }
 
-        // Dial text (no brand names)
-        var f = Gfx.FONT_XTINY;
-        var lh = dc.getFontHeight(f);
-        dc.setColor(C_WHITE, Gfx.COLOR_TRANSPARENT);
-        dc.drawText(_cx, _cy - _r * 0.36, f, "AUTOMATIC", Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
-        dc.setColor(C_GREEN, Gfx.COLOR_TRANSPARENT);
-        dc.drawText(_cx, _cy + _r * 0.30, f, "GMT 24H", Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
-        dc.setColor(C_SILVER, Gfx.COLOR_TRANSPARENT);
-        dc.drawText(_cx, _cy + _r * 0.30 + lh * 0.75, f, "CHRONOMETER", Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+        // Dial print (crown + wordmarks) as bitmaps, one set per screen size
+        if (_dialTop != null) {
+            dc.drawBitmap(_cx - _dialTop.getWidth() / 2, _cy - _r * 0.53, _dialTop);
+        }
+        if (_dialBottom != null) {
+            dc.drawBitmap(_cx - _dialBottom.getWidth() / 2, _cy + _r * 0.165, _dialBottom);
+        }
     }
 
     function drawDate(dc) {

@@ -1,6 +1,7 @@
 """Render a PNG preview of the watch face (mirrors source/GMTView.mc geometry)."""
 import math, sys
 from PIL import Image, ImageDraw, ImageFont
+from brand_assets import make_blocks
 
 S = 4  # supersampling
 
@@ -45,9 +46,9 @@ def render(size=260, style=0, h=10, m=10, s=32, gmt_h=15.5, day=9):
         elif hh in (6, 9): poly(xf([(-.04, .54), (-.04, .715), (.04, .715), (.04, .54)], a), "white", "#AAAAAA")
         else:
             p = polar(a, .645); circ(p, R*.068, "#AAAAAA"); circ(p, R*.055, "white")
-    d.text((cx, cy-R*.36), "AUTOMATIC", font=sfont, fill="white", anchor="mm")
-    d.text((cx, cy+R*.30), "GMT 24H", font=sfont, fill="#00AA55", anchor="mm")
-    d.text((cx, cy+R*.40), "CHRONOMETER", font=sfont, fill="#AAAAAA", anchor="mm")
+    t, b = make_blocks(size)
+    t = t.resize((t.width*S, t.height*S), Image.LANCZOS); b = b.resize((b.width*S, b.height*S), Image.LANCZOS)
+    img.paste(t, (int(cx - t.width/2), int(cy - R*.53)), t); img.paste(b, (int(cx - b.width/2), int(cy + R*.165)), b)
     # hands
     aH = ((h % 12) + m/60)/12*2*math.pi; aM = (m + s/60)/60*2*math.pi; aG = gmt_h/24*2*math.pi; aS = s/60*2*math.pi
     poly(xf([(-.035, -.10), (-.035, .36), (.035, .36), (.035, -.10)], aH), "white", "#555555")
