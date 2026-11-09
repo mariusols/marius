@@ -19,6 +19,6 @@ fi
 mkdir -p dist
 for d in fenix7 fenix7s fenix7x fenix7pro fenix7spro fenix7xpro; do
   echo "== $d"
-  "$MONKEYC" -f monkey.jungle -d "$d" -o "dist/GMT24H-$d.prg" -y "$KEY" -r -w
+  "$MONKEYC" -f monkey.jungle -d "$d" -o "dist/GMT-Master-II-$d.prg" -y "$KEY" -r -w
 done
 ls -la dist

@@ -27,7 +27,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: GMT24H-prg
+          name: GMT-Master-II-prg
           path: dist/*.prg
 
       - name: Commit built files to dist/

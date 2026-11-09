@@ -4,7 +4,7 @@ using Toybox.WatchUi;
 
 module GMTSettings {
 
-    const BEZEL_COUNT = 5;
+    const BEZEL_COUNT = 3;
 
     function getNumber(key, def) {
         var v = Properties.getValue(key);
@@ -37,10 +37,8 @@ module GMTSettings {
     }
 
     function bezelName(b) {
-        if (b == 1) { return "Pepsi omvendt"; }
-        if (b == 2) { return "Batman"; }
-        if (b == 3) { return "Coke"; }
-        if (b == 4) { return "Sprite"; }
+        if (b == 1) { return "Batman"; }
+        if (b == 2) { return "Sprite"; }
         return "Pepsi";
     }
 
@@ -58,7 +56,7 @@ class GMTSettingsMenu extends WatchUi.Menu2 {
     var minusItem;
 
     function initialize() {
-        Menu2.initialize({ :title => "GMT 24H" });
+        Menu2.initialize({ :title => "GMT-Master II" });
         bezelItem = new WatchUi.MenuItem("Bezel", GMTSettings.bezelName(GMTSettings.bezelStyle()), :bezel, {});
         plusItem = new WatchUi.MenuItem("GMT +1 time", GMTSettings.offsetLabel(GMTSettings.gmtOffset()), :plus, {});
         minusItem = new WatchUi.MenuItem("GMT -1 time", GMTSettings.offsetLabel(GMTSettings.gmtOffset()), :minus, {});

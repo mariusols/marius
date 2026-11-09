@@ -1,0 +1,15 @@
+<drawables>
+    <bitmap id="BgPepsi" filename="bg_pepsi.png" dithering="none"/>
+    <bitmap id="BgBatman" filename="bg_batman.png" dithering="none"/>
+    <bitmap id="BgSprite" filename="bg_sprite.png" dithering="none"/>
+    <bitmap id="D0" filename="d0.png" dithering="none"/>
+    <bitmap id="D1" filename="d1.png" dithering="none"/>
+    <bitmap id="D2" filename="d2.png" dithering="none"/>
+    <bitmap id="D3" filename="d3.png" dithering="none"/>
+    <bitmap id="D4" filename="d4.png" dithering="none"/>
+    <bitmap id="D5" filename="d5.png" dithering="none"/>
+    <bitmap id="D6" filename="d6.png" dithering="none"/>
+    <bitmap id="D7" filename="d7.png" dithering="none"/>
+    <bitmap id="D8" filename="d8.png" dithering="none"/>
+    <bitmap id="D9" filename="d9.png" dithering="none"/>
+</drawables>

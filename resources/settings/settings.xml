@@ -7,8 +7,6 @@
             <listEntry value="0">@Strings.Bezel0</listEntry>
             <listEntry value="1">@Strings.Bezel1</listEntry>
             <listEntry value="2">@Strings.Bezel2</listEntry>
-            <listEntry value="3">@Strings.Bezel3</listEntry>
-            <listEntry value="4">@Strings.Bezel4</listEntry>
         </settingConfig>
     </setting>
 </settings>
