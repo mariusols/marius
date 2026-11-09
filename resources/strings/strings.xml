@@ -1,0 +1,10 @@
+<strings>
+    <string id="AppName">GMT 24H</string>
+    <string id="GmtOffsetTitle">GMT-viser: UTC-forskyvning (timer)</string>
+    <string id="BezelTitle">Boett / bezel</string>
+    <string id="Bezel0">Pepsi (blå/rød)</string>
+    <string id="Bezel1">Pepsi omvendt (rød/blå)</string>
+    <string id="Bezel2">Batman (sort/blå)</string>
+    <string id="Bezel3">Coke (sort/rød)</string>
+    <string id="Bezel4">Sprite (grønn/sort)</string>
+</strings>
